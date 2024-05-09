@@ -29,3 +29,19 @@ class HtmlNode:
     def __repr__(self) -> str:
         children_list_string = self.print_children(self)
         return children_list_string
+    
+class LeafNode(HtmlNode):
+    def __init__(self, value,tag=None, props=None) -> None:
+        self.value = value
+        super().__init__(tag, self.value, None ,props)
+
+    def to_html(self) -> None:
+        if not self.value:
+            raise Exception(ValueError)
+        if self.props:
+            if not self.tag:
+                raise Exception(ValueError)
+            return f"<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>"
+        if self.tag:
+            return f"<{self.tag}>{self.value}<{self.tag}>"
+        return f"{self.value}"
