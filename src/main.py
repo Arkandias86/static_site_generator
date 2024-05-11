@@ -1,8 +1,10 @@
 from textnode import TextNode
 from htmlnode import HtmlNode, LeafNode, ParentNode
 
-txtNode = TextNode("This is a text node", "bold", "https://www.boot.dev")
-#print(repr(txtNode))
+
+txtNode = TextNode("This is a text node", "link", "https://www.boot.dev")
+
+
 
 htmlNode1 = HtmlNode(tag="p",value="Hello you!")
 htmlNode2 = HtmlNode(tag="a", children=htmlNode1, props={"href": "http://www.kikoo.fr", "color": "orange"})
@@ -20,4 +22,4 @@ node = ParentNode(
     ],
 )
 
-print(node.to_html())
+print(repr(txtNode.text_node_to_html_node()))
