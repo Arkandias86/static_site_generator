@@ -1,5 +1,6 @@
 from textnode import TextNode
 from htmlnode import HtmlNode, LeafNode, ParentNode
+from inline_markdown import *
 
 
 txtNode = TextNode("This is a text node", "link", "https://www.boot.dev")
@@ -22,4 +23,7 @@ node = ParentNode(
     ],
 )
 
-print(repr(txtNode.text_node_to_html_node()))
+node = TextNode("This is text with a **bold block** word", "text_type_text")
+new_nodes = split_nodes_delimiter([node], "**", "text_type_bold")
+
+print(new_nodes)
