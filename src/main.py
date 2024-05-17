@@ -17,10 +17,10 @@ htmlNode3 = HtmlNode(tag="h1", children=htmlNode2)
 text = "This is text with an ![image](https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/zjjcJKZ.png) and another ![second image](https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/3elNhQu.png)"
 
 node = TextNode(
-    "This is text with an ![image](https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/zjjcJKZ.png) and another ![second image](https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/3elNhQu.png)",
-    text_type_text,
-)
-new_nodes = split_nodes_image(node)
+            "![image](https://www.example.com/image.png)",
+            text_type_text,
+        )
+print(split_nodes_image([node]))
 
-
-print(new_nodes)
+#raw_text = "This is **text** with an *italic* word **and** a [link](https://boot.dev) and a `code block` and an ![image](https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/zjjcJKZ.png) and a [link](https://boot.dev)"
+#print("result is: ", text_to_textnodes(raw_text))
