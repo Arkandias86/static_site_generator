@@ -1,5 +1,5 @@
 from textnode import TextNode
-from htmlnode import HtmlNode, LeafNode, ParentNode
+from htmlnode import HTMLNode, LeafNode, ParentNode
 from inline_markdown import *
 from markdown_blocks import *
 
@@ -8,9 +8,9 @@ txtNode = TextNode("This is a text node", "link", "https://www.boot.dev")
 
 
 
-htmlNode1 = HtmlNode(tag="p",value="Hello you!")
-htmlNode2 = HtmlNode(tag="a", children=htmlNode1, props={"href": "http://www.kikoo.fr", "color": "orange"})
-htmlNode3 = HtmlNode(tag="h1", children=htmlNode2)
+htmlNode1 = HTMLNode(tag="p",value="Hello you!")
+htmlNode2 = HTMLNode(tag="a", children=htmlNode1, props={"href": "http://www.kikoo.fr", "color": "orange"})
+htmlNode3 = HTMLNode(tag="h1", children=htmlNode2)
 
 #leafNode = LeafNode(tag="h1",value="" , props={"color": "red"})
 
@@ -23,14 +23,8 @@ node = TextNode(
         )
 #print(split_nodes_image([node]))
 
-raw_text = """
-This is **bolded** paragraph
+raw_text = """```
+test
+```"""
 
-This is another paragraph with *italic* text and `code` here
-This is the same paragraph on a new line
-
-* This is a list
-* with items
-"""
-
-print(markdown_to_blocks(raw_text))
+print(block_to_block_type(raw_text))
