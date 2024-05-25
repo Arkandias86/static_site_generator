@@ -1,5 +1,4 @@
-from generate_page import generate_page
+from generate_page import generate_pages_recursive
 
 
-generate_page("content/index.md", "template.html", "public/index.html")
-        
+generate_pages_recursive("content/", "template.html", "public/")
